@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Varada</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+     <style>
+     /* Style for the navigation links */
+        .nav-link {
+        font-size: 10px; /* Increase font size */
+       font-weight: bold; /* Make text bold */
+    /* Additional styles if needed */
+      }
+      
+     </style>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/">Homepage</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/datadescription">Data Description</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/dataexploration">Data Exploration</a>
+          <a class="mr-5 hover:text-gray-900 nav-link" href="/modelandinterp">Model and Interpretation</a>
+        </nav> 
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="/">Go back to homepage</a>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <style>
+        body {
+            background-color:#fff5f8
+        }
+    </style>
+
+  <title> Data Exploration</title>
+  <style>
+    /* Styles for the title */
+    .title {
+      font-size: 24px; /* Adjust the font size */
+      font-weight: bold; /* Make text bold */
+      /* Additional styles if needed */
+    }
+     .description {
+      font-size: 18px;
+      justify-content: left;/* Adjust the font size */
+      /* Additional styles if needed */
+    }
+    
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Adjust height as needed */
+    }
+    
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .dropdown-btn {
+      width: 500px; /* Fixed width for all buttons */
+      padding: 15px;
+      background-color: #0A2472; /* Grey background */
+      border: none;
+      text-align: center;
+      color: #fff; /* Text color */
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 20px; /* Spacing between buttons */
+    }
+
+    .dropdown-btn:hover {
+      background-color: #ccc; /* Darker grey on hover */
+    }
+
+    .dropdown-content {
+      display: none;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+     .paragraph-container {
+      max-width: 600px; /* Set maximum width for the content */
+      margin: 0 auto; /* Center the container */
+      text-align: center; /* Justify text */
+    }
+
+    .dropdown-content img {
+      text-align: center;
+      display: block; /* Ensure the image is a block element */
+      margin: 0 auto; /* Center the image horizontally */
+    }
+   
+    .blue-button {
+      background-color: #0A2472; /* Dark blue color */
+      color: white; /* Text color */
+     /* Additional styling (padding, border, etc.) as needed */
+       }
+
+  </style>
+  
+  
+  <br>
+  <h1 class="title">Data Exploration:</h1>
+  <br>
+<p class="description">
+   <strong>Data Dimensions</strong>: 991_346 data samples and 24 features
+   <br>
+   <br>
+   <strong>Target Variable</strong>: "DRK_YN"
+   <br>
+   <br>
+   <strong>Missing Values</strong>: None (The dataset is complete)
+   <br>
+   <br>
+   <strong>Count of Outliers</strong>: 87_291 samples
+</p>
+   <br>
+   <br>
+   <br>
+
+   <h2 class="title">Data Analysis:</h2>
+
+<p class="description"> <br>
+Click each button to know more about Data analysis results: </p>
+  <br><br>
+  <div id="container">
+    <button class="dropdown-btn" onclick="toggleOutliers()">Before and After Outliers</button>
+    <div id="OutliersParagraph" class="dropdown-content">
+        <img src="/static/beforeandafterplot.png" alt="beforeandafterplot.png" width="700" height="100">
+        <br>
+        <br>
+      <p> The histograms now display a more coherent distribution, allowing for better visualization compared to their initial representations. However, specific histograms like those for 'DBP' and 'SBP' exhibit peculiar patterns with multiple peaks. These distinct peaks seem to arise from potential rounding effects, appearing consistently at intervals that align with integer values of 10 (f(x) = 10*n, where n represents a natural number).
+      </p>
+    </div>
+    
+    
+    <button class="dropdown-btn" onclick="toggleNumeric()">Data Analysis of Numeric Columns</button>
+    <div id="NumericParagraph" class="dropdown-content">
+        <img src="/static/kdeplot.png" alt="kdeplot.png" width="700" height="100">
+       <div> <h2><strong>Observations</strong>:</h2>
+  
+  <p>1. Patterns within certain metrics like age, height, and weight seem influenced by apparent rounding to the nearest 5 units. A notable trend indicates higher alcohol consumption among younger to middle-aged individuals compared to older ones. This observation invites exploration into whether societal shifts or generational aspects impact drinking tendencies.</p>
+  
+  <p>2. Another intriguing observation links physical attributes and alcohol intake. Taller and heavier individuals tend to exhibit higher alcohol consumption, hinting at a potential gender influence, as men generally have greater height and weight averages compared to women, potentially impacting drinking habits.</p>
+  
+  <p>3. While less pronounced, the waistline metric reflects a similar pattern, associating larger waistlines with increased alcohol consumption.</p>
+  
+  <p>4. Metrics like BLDS, tot_chole, and HDL_chole show parallels between drinkers and non-drinkers. However, there's a subtle contrast with LDL_cholesterol, slightly higher among non-drinkers. This discrepancy suggests that alcohol might affect different cholesterol components uniquely.</p>
+  
+  <p>5. Elevated triglyceride levels among drinkers suggest a plausible connection between alcohol intake and changes in lipid metabolism.</p>
+  
+  <p>6. Hemoglobin levels reveal a dual-peak distribution. Given its association with males, this finding supports the hypothesis linking gender dynamics with drinking habits.</p>
+  
+  <p>7. Metrics SGOT_ALT and gamma_GTP display higher values among alcohol consumers, hinting at potential liver function implications. These results prompt further investigation into alcohol's hepatotoxic effects.</p>
+      </div>
+   </div>
+    
+    
+    
+    
+    <button class="dropdown-btn" onclick="toggleOrdinal()">Data Analysis of Ordinal Columns</button>
+     <div id="ordinalParagraph" class="dropdown-content">
+        <img src="/static/ordinaldataanalysis.png" alt="ordinaldataanalysis.png" width="700" height="100">
+       <div> <h2><strong>Observations</strong>:</h2>
+    <p>1. Higher alcohol consumption was observed among study participants with abnormal hearing capabilities. This correlation suggests potential influencing factors on drinking habits. One possibility is that individuals facing hearing challenges use alcohol as a coping mechanism, seeking temporary relief or distraction. Further research could explore underlying motivations and psychological aspects fueling this association.</p>
+
+    <p>2. Participants classified as "never smokers" (SMK_stat_type_cd = 1.0) exhibited a nearly double likelihood of alcohol consumption. This intriguing finding suggests a significant link between smoking history and alcohol intake. While further investigation is necessary to elucidate the exact causal relationship, individuals who have never smoked might have distinct social or lifestyle factors shaping their alcohol consumption patterns.</p>
+      </div>
+   </div>
+    
+    
+    
+    <button class="dropdown-btn" onclick="toggleNominal()">Data Analysis of Nominal Columns</button>
+     <div id="NominalParagraph" class="dropdown-content">
+          <img src="/static/nominaldataanalysis.png" alt="nominaldataanalysis.png" width="700" height="100">
+          <div> <h2><strong>Observations</strong>:</h2>
+       <p>1. Male participants displayed a more than two-fold increase in alcohol consumption compared to their female counterparts. This significant gender disparity necessitates further investigation into potential sociocultural, behavioral, or physiological factors contributing to this observed difference.</p>
+
+       <p>2. The present study population showcases a commendable near-equal distribution of male and female participants. This balanced representation mitigates gender-related sampling biases, enhancing the robustness and reliability of the analyses and conclusions drawn from the data.</p>
+         </div>
+      </div>
+    <br>
+    <br>
+    <br>
+    <br><br>
+<br><br>
+<br><br>
+
+<h2 class="title">Data Visualization:</h2>
+<br>
+        <br>
+  <p> <strong>Try it yourself! </strong> </p>
+  <br>
+        <br>
+    <form action="/plot" method="post">
+        <label for="plot_type">Select Plot Type:</label>
+        <select name="plot_type" id="plot_type">
+            <option value="scatter">Scatter Plot</option>
+            <option value="bar">Bar Plot</option>
+            <option value="hist">Histogram</option>
+        </select>
+        <br>
+        <br>
+        <label for="feature_x">Select X-axis Feature:</label>
+        <select name="feature_x" id="feature_x">
+            {% for column_name in column_names %}
+                <option value="{{ column_name }}">{{ column_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="feature_y">Select Y-axis Feature:</label>
+        <select name="feature_y" id="feature_y">
+            {% for column_name in column_names %}
+                <option value="{{ column_name }}">{{ column_name }}</option>
+            {% endfor %}
+        </select>
+       <br>
+       <br>
+       <button type="submit" class="btn btn-primary btn-block btn-large blue-button">Generate Plot</button>
+    </form>
+
+    <div id="plot-container">
+        <!-- Plot will be displayed here -->
+    </div>
+
+<br><br>
+<br><br>
+<br><br>
+    </div>
+    <p> </p>
+  </div>
+
+   <h2 class="title">Feature Engineering:</h2>
+ <br>
+<br>
+<p class="description"> 
+The data was Label-Encoded and a two-step approach was taken to select the features for the model. </p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+     <div class="center">
+    <img src="/static/corrplot.png" alt="corrplot.png" width="700" height="100">
+  </div>
+  <br>
+  <br><br><br>
+  <p class="description"> <strong>Step 1:</strong> All features having a higher that 0.6 correlation score were eliminated (i.e "sex", "height","waistline","LDL_chole", "SGOT_AST" were removed).</p>
+  <br>
+  <br>
+  <p class="description"><strong> Step 2:</strong> Feature Importance with Random Forest gave the top 11 features for training the model.
+    
+    <div class="center">
+    <img src="/static/randomforest.png" alt="randomforest.png" width="700" height="100">
+  </div>
+  
+  <h2 class="title">Data Standardization:</h2>
+<br>
+<br>
+<p class="description"> 
+The data was standardized by StandardScaler().</p>
+  <br>
+  
+  </div>
+    <p> </p>
+  </div>
+
+  <script>
+    function toggleOutliers() {
+      var intro = document.getElementById("OutliersParagraph");
+      if (intro.style.display === "none") {
+        intro.style.display = "block";
+      } else {
+        intro.style.display = "none";
+      }
+    }
+
+    function toggleNumeric() {
+      var purpose = document.getElementById("NumericParagraph");
+      if (purpose.style.display === "none") {
+        purpose.style.display = "block";
+      } else {
+        purpose.style.display = "none";
+      }
+    }
+    
+     function toggleOrdinal() {
+      var purpose = document.getElementById("ordinalParagraph");
+      if (purpose.style.display === "none") {
+        purpose.style.display = "block";
+      } else {
+        purpose.style.display = "none";
+      }
+    }
+    
+     function toggleNominal() {
+      var purpose = document.getElementById("NominalParagraph");
+      if (purpose.style.display === "none") {
+        purpose.style.display = "block";
+      } else {
+        purpose.style.display = "none";
+      }
+    }
+  </script>
+
+
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 Varada
+        </p>
+        
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>

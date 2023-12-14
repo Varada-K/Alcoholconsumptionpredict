@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Varada</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+     <style>
+     /* Style for the navigation links */
+        .nav-link {
+        font-size: 10px; /* Increase font size */
+       font-weight: bold; /* Make text bold */
+    /* Additional styles if needed */
+      }
+      
+     </style>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/">Homepage</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/datadescription">Data Description</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/dataexploration">Data Exploration</a>
+          <a class="mr-5 hover:text-gray-900 nav-link" href="/modelandinterp">Model and Interpretation</a>
+        </nav> 
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="/">Go back to homepage</a>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <style>
+        body {
+            background-color:#fff5f8
+        }
+    </style>
+
+  <title> Data Exploration</title>
+  <style>
+    /* Styles for the title */
+    .title {
+      font-size: 36px; /* Adjust the font size */
+      font-weight: bold; /* Make text bold */
+      /* Additional styles if needed */
+    }
+     .description {
+      font-size: 18px;
+      align_text: center;/* Adjust the font size */
+      /* Additional styles if needed */
+    }
+    
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Adjust height as needed */
+    }
+    
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .dropdown-btn {
+      width: 500px; /* Fixed width for all buttons */
+      padding: 15px;
+      background-color: #0A2472; /* Grey background */
+      border: none;
+      text-align: center;
+      color: #fff; /* Text color */
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 20px; /* Spacing between buttons */
+    }
+
+    .dropdown-btn:hover {
+      background-color: #ccc; /* Darker grey on hover */
+    }
+
+    .dropdown-content {
+      display: none;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+     .paragraph-container {
+      max-width: 600px; /* Set maximum width for the content */
+      margin: 0 auto; /* Center the container */
+      text-align: center; /* Justify text */
+    }
+
+    .dropdown-content img {
+      text-align: center;
+      display: block; /* Ensure the image is a block element */
+      margin: 0 auto; /* Center the image horizontally */
+    }
+   
+  </style>
+  
+
+{% if prediction==1 %}
+      <br><br><br>
+      <center> <div> There is a <strong>high</strong> chance of the patient being an Alcohol consumer  </div> </center>
+      {% else %}
+      <br><br><br>
+      <center><div> There are <strong>low</strong> chance of the patient being an Alcohol consumer </div></center>
+      {% endif %}
+  <br>
+  
+  </div>
+    <p> </p>
+  </div>
+
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 Varada
+        </p>
+        
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>

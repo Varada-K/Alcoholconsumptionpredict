@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Varada</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+     <style>
+     /* Style for the navigation links */
+        .nav-link {
+        font-size: 10px; /* Increase font size */
+       font-weight: bold; /* Make text bold */
+    /* Additional styles if needed */
+      }
+      
+     </style>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/">Homepage</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/datadescription">Data Description</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/dataexploration">Data Exploration</a>
+          <a class="mr-5 hover:text-gray-900 nav-link" href="/modelandinterp">Model and Interpretation</a>
+        </nav> 
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="/">Go back to homepage</a>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <style>
+        body {
+            background-color:#fff5f8
+        }
+    </style>
+
+  <title> Data Description</title>
+  <style>
+    /* Styles for the title */
+    .title {
+      font-size: 24px; /* Adjust the font size */
+      font-weight: bold; /* Make text bold */
+      /* Additional styles if needed */
+    }
+     .description {
+      font-size: 18px;
+      justify-content: center;/* Adjust the font size */
+      /* Additional styles if needed */
+    }
+    
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Adjust height as needed */
+    }
+    
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .dropdown-btn {
+      width: 500px; /* Fixed width for all buttons */
+      padding: 15px;
+      background-color: #0A2472; /* Grey background */
+      border: none;
+      text-align: center;
+      color: #fff; /* Text color */
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-bottom: 20px; /* Spacing between buttons */
+    }
+
+    .dropdown-btn:hover {
+      background-color: #ccc; /* Darker grey on hover */
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 20px;
+    }
+    
+     .paragraph-container {
+      max-width: 600px; /* Set maximum width for the content */
+      margin: 0 auto; /* Center the container */
+      text-align: justify; /* Justify text */
+    }
+
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+  </style>
+  
+  
+
+
+  <h1 class="title">Data Description</h1>
+  <br>
+<p class="description">
+  The prediction algorithm is trained on an open-source dataset obtained from Kaggle, titled "<a href="https://www.kaggle.com/datasets/sooyoungher/smoking-drinking-dataset" style="color: blue; text-decoration: underline;" target="_blank">Smoking and Drinking Dataset with Body Signal</a>".
+</p>
+<br>
+<p class="description">
+  The data is free to use for non-commercial purpose. </p>
+  <br><br><br><br>
+  <div class="center">
+    <img src="/static/data_liscense.png" alt="data_license">
+  </div>
+  <br><br><br>
+<p class="description"> 
+Click each button to know more about the dataset: </p>
+  <br>
+  <div id="container">
+    <button class="dropdown-btn" onclick="toggleIntroduction()">Introduction</button>
+    <p id="introductionParagraph" class="dropdown-content">
+       The dataset containing body signal data related to smoking and alcohol consumption is a valuable resource for predictive analysis. It originates from the National Health Insurance Service in Korea and has undergone meticulous curation to safeguard privacy and data security by excluding any personal or sensitive information.
+    </p>
+    <button class="dropdown-btn" onclick="togglePurpose()">Purpose of the Dataset</button>
+    <p id="purposeParagraph" class="dropdown-content">
+       <strong>Analysis of Body Signals: </strong>
+      The dataset contains a wide range of body signal measurements, incorporating diverse physiological and health-related characteristics. Researchers and data scientists can utilize this extensive dataset to explore the connections between these signals and the patterns of smoking and drinking behaviors, deriving valuable insights from the data.
+    <br>
+      <strong>Classification of Smokers and Drinkers:</strong> A prominent use case for this dataset involves categorizing individuals into two specific groups: smokers and drinkers. Through the utilization of machine learning and statistical methodologies, professionals can create predictive models capable of accurately determining if an individual belongs to either or both of these groups using their body signal data.
+    </p>
+    <button class="dropdown-btn" onclick="toggleOverview()">Data Overview</button>
+    <p id="overviewParagraph" class="dropdown-content">
+       Within the Smoking and Drinking Dataset, a diverse set of parameters is present, incorporating factors like age, height, weight, blood pressure, cholesterol levels, among others. These parameters serve as fundamental components for comprehending the physiological traits within the dataset. Moreover, the dataset comprises details concerning smoking behaviors, alcohol consumption patterns, and a spectrum of body signal measurements.
+    </p>
+    
+    <button class="dropdown-btn" onclick="toggleDescription()">Data Description</button>
+  <div id="DescriptionParagraph" class="dropdown-content">
+       <p> The following table provides a description of each feature:
+        <br>
+        <br>
+         <table>
+            <tr>
+                 <th>Feature</th>
+                 <th>Description</th>
+            <tr>
+                  <td>Sex</td>
+                  <td>male, female</td>
+            </tr>
+            <tr>
+                  <td>Age</td>
+                  <td>round up to 5 years</td>
+            </tr>
+            <tr>
+                  <td>Height</td>
+                  <td>round up to 5 cm (cm)</td>
+            </tr>
+            <tr>
+                 <td>Weight</td>
+                 <td>(kg)</td>
+            </tr>
+            <tr>
+                 <td>Sight_left</td>
+                 <td>eyesight (left)</td>
+            </tr>
+            <tr>
+                 <td>Sight_right</td>
+                 <td>eyesight (right)</td>
+            </tr>
+            <tr>
+                 <td>Hear_left</td>
+                 <td>hearing left, 1 (normal), 2 (abnormal)</td>
+            </tr>
+            <tr>
+                 <td>Hear_right</td>
+                 <td>hearing right, 1 (normal), 2 (abnormal)</td>
+            </tr>
+            <tr>
+                 <td>SBP</td>
+                 <td>Systolic blood pressure (mmHg)</td>
+            </tr>
+            <tr>
+                  <td>DBP</td>
+                  <td>Diastolic blood pressure (mmHg)</td>
+            </tr>
+            <tr>
+                  <td>BLDS</td>
+                  <td>Blood Sugar Level or Fasting Blood Glucose (mg/dL)</td>
+            </tr>
+            <tr>
+                  <td>Tot_chole</td>
+                  <td>total cholesterol (mg/dL)</td>
+            </tr>
+            <tr>
+                  <td>HDL_chole</td>
+                  <td>High-Density Lipoprotein cholesterol (mg/dL)</td>
+            </tr>
+             <tr>
+                  <td>LDL_chole</td>
+                  <td>Low-Density Lipoprotein cholesterol (mg/dL)</td>
+            </tr>
+            <tr>
+                  <td>Triglyceride</td>
+                  <td>triglyceride (mg/dL)</td>
+            </tr>
+            <tr>
+                 <td>Hemoglobin</td>
+                 <td>hemoglobin (g/dL)</td>
+            </tr>
+            <tr>
+                 <td>Urine_protein</td>
+                 <td>protein in urine, 1 (-), 2 (+/-), 3 (+1), 4 (+2), 5 (+3), 6 (+4)</td>
+            </tr>
+             <tr>
+                 <td>Serum_creatinine</td>
+                 <td>serum (blood) creatinine (mg/dL)</td>
+            </tr>
+            <tr>
+                 <td>SGOT_AST</td>
+                 <td>Serum Glutamate Oxaloacetate Transaminase Aspartate Transaminase (IU/L)</td>
+            </tr>
+            <tr>
+                 <td>SGOT_ALT</td>
+                 <td>Serum Glutamate Oxaloacetate Transaminase Alanine Transaminase (IU/L)</td>
+            </tr>
+           <tr>
+                 <td>Gamma_GTP</td>
+                 <td>γ-Glutamyl Transpeptidase (IU/L)</td>
+            </tr>
+            <tr>
+                 <td>SMK_stat_type_cd</td>
+                 <td>Smoking state, 1 (never), 2 (used to smoke but quit), 3 (still smoke)</td>
+           </tr>
+            <tr>
+                 <td>DRK_YN</td>
+                 <td>Drinker or Not</td>
+           </tr>
+         </table>
+       </p>
+</div>
+    
+  </div>
+    <p> </p>
+  </div>
+
+  <script>
+    function toggleIntroduction() {
+      var intro = document.getElementById("introductionParagraph");
+      if (intro.style.display === "none") {
+        intro.style.display = "block";
+      } else {
+        intro.style.display = "none";
+      }
+    }
+
+    function togglePurpose() {
+      var purpose = document.getElementById("purposeParagraph");
+      if (purpose.style.display === "none") {
+        purpose.style.display = "block";
+      } else {
+        purpose.style.display = "none";
+      }
+    }
+    
+     function toggleOverview() {
+      var purpose = document.getElementById("overviewParagraph");
+      if (purpose.style.display === "none") {
+        purpose.style.display = "block";
+      } else {
+        purpose.style.display = "none";
+      }
+    }
+    
+     function toggleDescription() {
+      var purpose = document.getElementById("DescriptionParagraph");
+      if (purpose.style.display === "none") {
+        purpose.style.display = "block";
+      } else {
+        purpose.style.display = "none";
+      }
+    }
+  </script>
+
+
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 Varada
+        </p>
+        
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>

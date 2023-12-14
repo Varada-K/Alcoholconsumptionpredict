@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Varada</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+     <style>
+     /* Style for the navigation links */
+        .nav-link {
+        font-size: 10px; /* Increase font size */
+       font-weight: bold; /* Make text bold */
+    /* Additional styles if needed */
+      }
+      {background-color:#fff5f8;
+             margin: 5rem;
+             padding: 3;}
+     </style>
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="https://github.com/Varada-K/Alcoholconsumptionpredict" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/">Homepage</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/datadescription">Data Description</a>
+           <a class="mr-5 hover:text-gray-900 nav-link" href="/dataexploration">Data Exploration</a>
+          <a class="mr-5 hover:text-gray-900 nav-link" href="/modelandinterp">Model and Interpretation</a>
+        </nav> 
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="/">Go back to homepage</a>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <style>
+        body {
+            background-color:#fff5f8;
+        }
+    </style>
+    <style>
+        input[type="text"] {
+            background-color: #f6f6f6; /* Light grey color */
+            /* Other styles */
+            border: 1px solid #ccc; /* Add a border for better visibility */
+            padding: 8px; /* Adjust padding for spacing */
+        }
+    </style>
+    <style>
+      .blue-button {
+      background-color: #0A2472; /* Dark blue color */
+      color: white; /* Text color */
+     /* Additional styling (padding, border, etc.) as needed */
+       }
+    </style>
+   
+    <section class="text-gray-600 body-font">
+      <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <img src="/static/alcohol.jpg">
+        </div>
+        <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> Enter data to predict Alcohol consumption:
+            <br class="hidden lg:inline-block">
+          </h1>
+        <div class="flex justify-center">
+            
+
+              <!-- Dropdown for smoking status -->
+    <form action="{{ url_for('predict')}}" method="POST">
+    <br>
+    <br>
+    <label for="SMK_stat_type_cd">Smoking Status: 1: Never, 2: Used to smoke, 3: Still smoke</label>
+        <div class="dropdown">
+            <select name="SMK_stat_type_cd" required="required" title="1: Never, 2: Used to smoke, 3: Still smoke">
+                <option value="" disabled selected>Select smoking status</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+        </div>
+        <br>
+        <label for="hemoglobin"> Hemoglobin in (g/dL) </label>
+        <br>
+        <input type="text" name="hemoglobin" placeholder="Hemoglobin in (g/dL)" required="required" title="Please enter Hemoglobin in (g/dl), without the unit" />
+        <br>
+        <br>
+        <label for="age">Age in years: </label>
+        <br>
+        <input type="text" name="age" placeholder="Age in years" required="required" title="Please enter age in years" />
+        <br>
+        <br>
+        <label for="gamma_GTP">γ-Glutamyl Transpeptidase in (IU/L)</label>
+        <br>
+        <input type="text" name="gamma_GTP" placeholder="Gamma GTP in (IU/L)" required="required" title="γ-Glutamyl Transpeptidase in (IU/L), without the unit" />
+        <br>
+        <br>
+        <label for="SGOT_ALT"> Serum Glutamate Oxaloacetate Transaminase Alanine Transaminase in (IU/L)</label>
+        <br>
+        <input type="text" name="SGOT_ALT" placeholder="SGOT-ALT" required="required" title="Please enter a numeric value for, Serum Glutamate Oxaloacetate Transaminase Alanine Transaminase (IU/L), without the unit" />
+        <br>
+        <br>
+        <label for="tot_chole"> Total cholesterol in (mg/dL)</label>
+        <br>
+        <input type="text" name="tot_chole" placeholder=Total cholesterol in (mg/dL)" required="required" title="Please enter a numeric value for, total cholesterol in (mg/dL), without the unit" />  
+        <br>
+        <br>
+        <label for="HDL_chole">High-Density Lipoprotein cholesterol (mg/dL)</label>
+        <br>
+        <input type="text" name="HDL_chole" placeholder="HDL-Cholestrol" required="required" title="Please enter a numeric value for, High-Density Lipoprotein cholesterol in (mg/dL), without the unit" />
+        <br>
+        <br>
+        <label for="BLDS">Blood Sugar Level or Fasting Blood Glucose (mg/dL)</label>
+        <br>
+        <input type="text" name="BLDS" placeholder="Blood Sugar Level" required="required" title="Please enter a numeric value for, Blood Sugar Level or Fasting Blood Glucose (mg/dL), without the unit" />
+        <br>
+        <br>
+        <label for="DBP">Diastolic blood pressure (mmHg)</label>
+        <br>
+        <input type="text" name="DBP" placeholder="Diastolic blood pressure" required="required" title="Please enter a numeric value for, Diastolic blood pressure (mmHg), without the unit" />
+        <br>
+        <br>
+        <label for="SBP">Systolic blood pressure (mmHg)</label>
+        <br>
+        <input type="text" name="SBP" placeholder="Systolic blood pressure" required="required" title="Please enter a numeric value for, Systolic blood pressure (mmHg), without the unit" />
+        <br>
+        <br>
+        <label for="triglyceride">Triglyceride (mg/dL)</label>
+        <br>
+        <input type="text" name="triglyceride" placeholder="Triglyceride (mg/dL)" required="required" title="Please enter a numeric value for, Triglyceride (mg/dL), without the unit" />
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large blue-button">Predict</button>
+    </form>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-pink-100 text-pink-500 flex-shrink-0">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+            <h2><strong>Effect of Alcohol consumption in Treatment and Medical Interventions</strong></h2>
+            <br>
+            <p class="leading-relaxed text-base">The treatment or medical intervention for individuals who are consumers of alcohol may differ in several aspects compared to those who do not consume alcohol or consume it within recommended limits. Alcohol consumption can impact various physiological systems and contribute to a range of health issues, which might influence the treatment approach. </p>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2574640/" class="mt-3 text-pink-500 inline-flex items-center" target="_blank">Learn More</a>
+
+    </section>
+
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-xl">Varada</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 Varada
+        </p>
+        
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>
