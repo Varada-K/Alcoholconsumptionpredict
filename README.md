@@ -1,4 +1,4 @@
-# Alcoholconsumptionpredict
+# Alcohol Consumption Predict
 
 Final Project for BIS634
 
